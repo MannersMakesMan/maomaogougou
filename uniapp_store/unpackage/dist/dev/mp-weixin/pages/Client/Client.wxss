@@ -1,0 +1,116 @@
+.addBtn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: rgba(80, 212, 212);
+  color: #fff;
+  font-size: 22rpx;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+}
+.item-box {
+  width: 690rpx;
+  padding-bottom: 20rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #F5F5F5;
+  border-radius: 20rpx;
+}
+.item-box .item-name {
+  font-size: 22rpx;
+  color: #333;
+  font-weight: bold;
+  padding: 20rpx;
+}
+.content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 100%;
+  height: 60rpx;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  border-radius: 30px;
+}
+.seh-box {
+  background-color: #f2f2f2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border: 1rpx solid #efefef;
+}
+.serachBtn {
+  height: 100%;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  padding: 0 30rpx;
+  line-height: 60rpx;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: -webkit-linear-gradient(left, #afeeee, #33cccc);
+  background: linear-gradient(to right, #afeeee, #33cccc);
+}
+.content-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.content-box .input {
+  width: 100%;
+  max-width: 100%;
+  line-height: 60rpx;
+  height: 60rpx;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  font-size: 20rpx;
+  padding: 10px;
+}
+.content-box .input.center {
+  width: 200rpx;
+}
+.content-box .input.sub {
+  width: auto;
+  color: grey;
+}
+.serach {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+.seh-box .aSearch-input-box {
+  width: 100%;
+}
+.seh-box-w {
+  width: 95%;
+  margin: 0 auto;
+}
+

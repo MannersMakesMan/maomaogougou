@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-combox": "/components/uni-combox/uni-combox",
+    "cartcontrol": "/components/cartcontrol",
+    "uni-popup": "/components/uni-popup/components/uni-popup/uni-popup",
+    "combox-search": "/components/cuihai-combox/cuihai-combox"
+  }
+}

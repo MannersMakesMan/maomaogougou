@@ -1,0 +1,2265 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.year 年度学生生涯职业报告</title>
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_427627_uao5n7rkk9996bt9.css">
+
+    <script src="~/js/echarts.min.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <style type="text/css">
+        body {
+            background: none;
+            background-color: none;
+            width: 795px;
+            font-size: 18px;
+            margin: 0 auto;
+        }
+
+        .right {
+            float: none !important;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+        }
+
+        .container-detail {
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .txtleftloof4 {
+            color: #48646f;
+            font-size: 18px;
+            margin-left: 30px;
+        }
+
+        .layui-btn {
+            display: inline-block;
+            height: 38px;
+            line-height: 38px;
+            padding: 0 18px;
+            background-color: #1989fa;
+            color: #fff;
+            white-space: nowrap;
+            text-align: center;
+            font-size: 14px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            opacity: .9;
+            filter: alpha(opacity=90);
+        }
+
+        .layui-btn-normal {
+            background-color: #1989fa;
+        }
+
+        .footer h1 {
+            color: #e4e4e4;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .ibox-title a {
+            font-size: 14px;
+            line-height: 14px;
+            font-family: New York;
+            letter-spacing: 2px;
+        }
+
+        .yuan {
+            float: left
+        }
+
+        .xuyan {
+            text-indent: 28px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="layui-btn layui-btn-normal" style="display:none;" type="button" id="exportExcel">下载预览</button>
+    <div class="container-detail">
+        <div class="right">
+            <div class="container1">
+                <div class="title" clas="hide a b c d"><i class="flag"></i>目录</div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <div style="margin-top:40px;">
+                            <h4 class="hide a">生涯能力</h4>
+                            <h5 class="hide a">---生涯能力测量功能介绍</h5>
+                            <h5 class="hide f1">---年级生涯能力测量情况</h5>
+                            <h5 class="hide f2">---班级生涯能力测量情况</h5>
+                        </div>
+                        <div style="margin-top:40px;">
+                            <h4 class="hide b">心理测量</h4>
+                            <h5 class="hide b">---心理测量功能功能介绍</h5>
+                            <h6 class="hide s1">---年级多元智能分析情况  </h6>
+                            <h6 class="hide s3">---年级学习多维分析情况  </h6>
+                            <h6 class="hide s5">---年级学习风格测量情况  </h6>
+                            <h6 class="hide s2">---班级多元智能分析情况  </h6>
+                            <h6 class="hide s4">---班级学习多维分析情况  </h6>
+                            <h6 class="hide s6">---班级学习风格测量情况  </h6>
+                        </div>
+                        <div style="margin-top:40px;">
+                            <h4 class="hide c">职业专业</h4>
+                            <h5 class="hide c">---职业专业测量功能介绍</h5>
+                            <h6 class="hide t1">---年级学生职业标签及专业方向  </h6>
+                            <h6 class="hide t2">---班级学生职业标签及专业方向  </h6>
+                        </div>
+                        <div style="margin-top:40px;">
+                            <h4 class="hide d">模拟志愿填报</h4>
+                            <h5 class="hide d">---模拟志愿填报功能介绍</h5>
+                            <h6 class="hide fo1">---年级志愿填报情况</h6>
+                            <h6 class="hide fo2">---班级志愿填报情况</h6>
+                        </div>
+                        <div style="margin-top:40px;">
+                            <h4 class="hide e">学科选择</h4>
+                            <h5 class="hide e">---学科选择功能介绍</h5>
+                            <h6 class="hide fi1">---年级学科选择情况</h6>
+                            <h6 class="hide fi2">---班级学科选择情况</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigclass"></div>
+            <div class="container1" style="margin-top:30px;display:none">
+                <div class="title"><i class="flag"></i>序言</div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <div class="xuyan">
+                            <a>
+                                生涯即人终身发展的历程，生涯就是人的生命与生活的全部。其内涵是指一个人的职业、社会、生活与人际关系的总和，是人一生中所经历的一系列职业、角色和情感生活的总称。高中阶段是学生生涯发展成长的一个特定阶段，是学生全面完成基础教育学习的最后总结阶段，是学生的人生观、价值观、世界观形成的关键阶段，是学生自我意识、自我概念发展最快的阶段，是学生走向社会实现自我管理的发展阶段，更是学生需要开始为自己的大学、专业学习以及今后的职业做出选择的重要阶段。
+                            </a>
+                        </div>
+                        <div class="xuyan">
+                            <a>
+                                我国学生开展生涯教育起步较晚，但发展迅猛，尤其是《国家中长期教育改革和发展规划纲要（2010－2020年）》和《上海市中长期教育改革和发展规划纲要》，都强调学校教育要为每一个学生的终身发展服务，高中教育要为学生成长、成人、成功提供知识和能力准备，建立学生发展指导制度，加强对学生的理想、心理、学业等方面的指导，为学生的人生发展奠定基础。《中小学心理健康教育指导纲要（2012年修订）》指出，心理健康教育要健全学生人格，开发学生潜能，促进学生身心和谐可持续发展，为他们健康成长和幸福生活奠定基础。2015年教育部重点工作之一将把生涯规划或生涯教育纳入高中生的必修课，将用五年左右时间普及生涯规划教育，让学生懂得制定自己的成长目标和生涯规划联系起来。这些政策和文件彰显对学生自主规划的重视、对学生个性兴趣和学科与专业选择的尊重，也由此激发全国所有高中学校开始规划实施学生生涯教育。
+                            </a>
+                        </div>
+                        <div style="clear:both"></div>
+                        <div class="xuyan">
+                            <a>
+                                2014年国务院印发《关于深化考试招生制度改革的实施意见》后，上海、浙江作为试点，开始推行新高考改革。“文理不分科”“语数外三科必考，其余科目6选3”“取消一、二本等批次区别”……与以往改革的“小手术”不同，这次高考改革可谓“大刀阔斧”。这一改革方案由上海和浙江逐步向全国各省市推广，2017年开始在北京、天津、山东、海南实施，@ViewBag.year开始在广东、湖北、江苏、江西、福建、黑龙江、吉林、辽宁等省份实施，新高考改革和课程改革都突出学生的主体意识、自主发展和科学选择，由此学校必须通过生涯教育去帮助学生开发学科潜质，激励自己的兴趣和能力特长，了解高校、专业、社会职业的需求标准，通过生涯规划专业指导，增进对课程选择、学科选择、专业选择的科学性与合理性。
+                            </a>
+                        </div>
+                        <div style="clear:both"></div>
+                        <div class="xuyan">
+                            <a>
+                                学校开展学生生涯教育必须有校长负责，要以学生为本，重视学生的自主发展和健康成长，学校要构建符合学生自主发展需求的生涯教育课程，校长能组织引领高中学生生涯教育实践研究，依据学校办学理念和育人目标，通过改革创新，将学生生涯教育全面融合在学校教育教学整体工作之中，让每一位老师在自己不同的岗位上自觉为学生的生涯发展做出指导。学校心理辅导中心要为学生生涯教育提供理论支持和专业指导，从而为保障高中学生的生涯教育提供科学有效的辅导实体。
+                            </a>
+                        </div>
+                        <div style="clear:both"></div>
+                        <div class="xuyan">
+                            <a>
+                                壹鼎国际教育科技集团致力于中国高中学生生涯教育的研究与实践，2013 与地方学校合作，为贯彻教育部指示，通过大量的高中学生生涯教育的需求调研，2014年着手研发，2017年创新开发了“壹鼎学生生涯规划系统”。“系统”构建由“生涯能力、心理测量、学科选择、职业专业测量、学业分析、研究型学习、教师评价、志愿填报等”功能模块组成，模块通过大数据的采集、运用、分析和评估，交互运作为学生制定学业规划、补短板提升能力、认识兴趣、明确职业方向、大学和专业介绍、课题研究与论文撰写等，还可以为高中生提供精准、全面的升学志愿填报指导和综合素质评价学习的一体化服务平台。平台内容完整、使用方便、界面新颖，“平台”功能得到学生、家长、社会各方认同，也是国内唯一能将学生学习能力、职业性向与大学、专业实现自动匹配。
+                            </a>
+                        </div>
+                        <div style="clear:both"></div>
+                        <div class="xuyan">
+                            <a>
+                                @ViewBag.year3月27日上海市教委发布《关于加强中小学生涯教育的指导意见》，在高中阶段则侧重于生涯规划。主要通过生涯教育课程与活动实施，包括生涯体验、志愿服务、研究性学习等，增强学生的社会意识和社会参与能力。在选学择业过程中，指导学生了解高等院校的专业设置和社会的职业需求等信息，要求率先在普通高中建立和普及生涯导师制。“壹鼎学生生涯规划系统”可以全面有效地实现这一目标，为便于学生、家长和教师熟练地操作“系统”，同时还提供指导培训课程和“系统操作说明”，从而通过“线下”培训和“线上”操作同时运作，课程学习与实践体验同步实施，教育指导与规划咨询合作同行。适时为学生提供适合其生涯发展的学习规划建议，给教师指导提供依据，帮家长参与提供辅导，并在学生自主选择的基础上最终形成适合其个性和学业水平的高考志愿建议方案，确保学校学生生涯辅导的全员参与、专业引领、富有成效。
+                            </a>
+                        </div>
+                        <div style="clear:both"></div>
+                        <div class="xuyan">
+                            <a>
+                                “壹鼎生涯规划系统”将从高考改革试验区上海出发，走出长三角，走向全中国。“系统”积累的数据信息，将清晰反映学校所有学生的成长发展和学习行为情况，以及教育教学过程中的问题，“系统”提供的数据信息有益于学校促进师生的整体发展，更有益于实现学校的办学理念和育人目标。
+                            </a>
+                        </div>
+                        <div style="clear:both"></div>
+                        <a style="float:right;">
+                            冯永熙    @ViewBag.year7月
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+
+            <div class="bigclass" style="border-bottom:solid 2px #000"></div>
+            <h1 style="text-align:center">正文</h1>
+            <div class="container1" id="a" style="display:none;">
+                <div class="title"><i class="flag"></i>生涯能力</div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>生涯能力功能介绍</h5>
+                        <a>
+                            1、学生通过学习能力、学习习惯、情绪调控、人际交往、意志品质五方面的能力发展情况进行自我评价。学生能够及时关注自己的动态变化并进行调整，促进学生的自我认识与自主意识。
+                        </a><br />
+                        <a>
+                            2、定时收集学生的学习能力、学习习惯、情绪调控、人际交往、意志品质五方面的发展情况的自我评价分数。每个纬度下有若干小题，在数据表上呈现每个用户每个小题的自评值、发展曲线。在每次学生填写自评时，系统会显示每个项目的学生年级群体平均值，以此解决学生盲目自评的问题，提醒学生自我修整、自我改变。
+                        </a><br />
+                        <a>
+                            3、通过个性化的评语、图表和不同颜色来呈现学生两次自评之间的变化，并有注释。一方面学生可以直观清晰地看到自己各项能力的发展变化情况；另一方面又及时有效地反馈信息于学生和教师，教师可根据每一位学生的生涯能力发展状况进行针对性的指导。学生自我评价改变了一切由家长和老师评价的方式，可唤醒学生的自我意识，调动学生规划自身发展的自主性。
+                        </a><br />
+                        <a>4、通过学生测试之后大数据分析，学生获得变化反馈和学生的整体评估。</a>
+                    </div>
+                    <div class="ibox-title f1">
+                        <h5>生涯能力年级测量情况</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year</h5>
+                                </div>
+                                @for (int i = 1; i <= 6; i++)
+                                {
+
+                                    <div class="ibox-content">
+                                        <div class=""></div>
+                                        <div id="@string.Format("tipcareer"+i+"")" style="width:595px;height:330px;display:none"></div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-title f2">
+                        <h5>生涯能力班级测量情况</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title" id="threeClass">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bigclass2"></div>
+            <div class="container1" id="b" style="display:none">
+                <div class="title"><i class="flag"></i>心理测量</div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>心理测量功能介绍</h5>
+                        <a>
+                            1、通过科学、客观、标准的测量手段对人的特定素质进行测量、分析、评价。这里的所谓素质，是指那些完成特定工作或活动所需要或与之相关的感知、技能、能力、气质、性格、兴趣、动机等个人特征，测量量表包括：多元智能测评、学习多维分析、考试焦虑测验、学习技能测验、学习风格测验、心理健康诊断等
+                        </a>
+                    </div>
+                    <div class="ibox-title">
+                        <h5>心理测量年级测量情况</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 年级多元智能分析</h5>
+                                </div>
+                                @for (int i = 1; i <= 6; i++)
+                                {
+
+                                    <div class="ibox-content">
+                                        <div class="addheight"></div>
+                                        <div id="@string.Format("tipint"+i+"")" style="width:595px;height:330px;display:none"></div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 年级学习多维分析</h5>
+                                </div>
+                                @for (int i = 1; i <= 6; i++)
+                                {
+
+                                    <div class="ibox-content">
+                                        <div class="addheight"></div>
+                                        <div id="@string.Format("tipmult"+i+"")" style="width:595px;height:330px;display:none"></div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 年级学习风格分析</h5>
+                                </div>
+                                @for (int i = 1; i <= 6; i++)
+                                {
+
+                                    <div class="ibox-content">
+                                        <div class="addheight"></div>
+                                        <div id="@string.Format("tipstyle"+i+"")" style="width:595px;height:330px;display:none"></div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-title">
+                        <h5>心理测量班级测量情况</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title" id="threeClassint">
+                                    <h5 id="ibox-title">@ViewBag.year 班级多元智能测量分析</h5>
+                                </div>
+                                <div style="clear:both"></div>
+                                <div class="ibox-title" id="threeClassmult">
+                                    <h5 id="ibox-title">@ViewBag.year 班级学习多维分析</h5>
+                                </div>
+                                <div style="clear:both"></div>
+                                <div class="ibox-title" id="threeClassstyle">
+                                    <h5 id="ibox-title">@ViewBag.year 班级学习风格分析</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bigclass3"></div>
+
+
+            <div class="container1" id="c" style="display:none">
+                <div class="title"><i class="flag"></i>职业专业</div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>职业专业测量介绍</h5>
+                        <a>
+                            1、职业专业平台用于评估学生的职业兴趣与专业方向，此平台主要分为三个部分。第一，学生定期填写自己的兴趣爱好和大学、专业与职业憧憬，这一部分旨在激发学生自我规划生涯发展的原意愿。第二，学生通过定期多次完成“兴趣测试”，得出一个属于自己比较稳定的职业标签。第三，平台系统会根据学生的职业测试标签，在数据库中寻找匹配，向学生推荐适合他的大学专业以及职业。
+                        </a><br />
+                        <a>
+                            2、职业专业平台选择了职业倾向测量工具“霍兰德职业兴趣测验”（汉化版），主要用于确定被测试者的职业兴趣倾向，进而用于指导被测试者选择适合自身兴趣的职业发展方向。如果学生已经有明确的职业方向，那么学生将会明白他的考虑或选择具有理论基础；如果学生还尚未确定职业方向，那么本平台将给予学生其职业方向的参考建议。霍兰德提出的6种基本职业类型为：实用型R、研究型I、艺术型A、社会型S、企业型E、常规型C.
+                        </a><br />
+                        <a>
+                            3、学生职业专业平台用于评估学生的职业兴趣与专业方向，满足学生通过测试获得职业标签，并且匹配大学和大学专业。
+                        </a>
+                    </div>
+                    <div class="ibox-title">
+                        <h5>@ViewBag.year 度学生职业标签及专业方向</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 年级学生职业标签分布情况</h5>
+                                </div>
+                                @for (int i = 1; i <= 6; i++)
+                                {
+                                    <div class="ibox-content" style="margin-top:40px;">
+                                        <div id="@string.Format("tipprofess"+i+"")" style="width:595px;height:500px;display:none"></div>
+                                        <div class="ibox-content" id="@string.Format("tipmanprofess"+i+"")" style="width:600px;height:500px;display:none"></div>
+                                        <div class="ibox-content" id="@string.Format("tipwomanprofess"+i+"")" style="width:600px;height:500px;display:none"></div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 班级学生职业标签分布情况</h5>
+                                </div>
+                                <div class="ibox-title" id="twoClassprofess">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigclass3"></div>
+            <div class="container1" id="d" style="display:none">
+                <div class="title"><i class="flag"></i>模拟志愿填报</div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>模拟志愿填报功能介绍</h5>
+                        <a>
+                            1、高考志愿填报选择平台用于评估学生的学业成绩，此平台主要分为三部分。第一，学生定期对自己下一次的考试位置进行预估，然后平台系统根据实际考试结果告诉学生他的目标达成与否。第二，平台会记录学生的每门学科每次重大考试结果，给予学生客观的学业发展评价。第三，平台系统会根据学生高中阶段三次统考的结果进行加权统计，计算出学生成绩在大群体中12个定位档次，形成测量统计常模，最后与各大学专业录取分数进行匹配，向学生推荐他目前学业水平能够报考的大学与专业群。
+                        </a><br />
+                        <a>
+                            2、最终系统会综合学生三年的自我评价、职业倾向测试、学业水平记录、以及他们自己选择的高校专业所形成的模拟高考志愿表，形成一份最终建议报告。
+                        </a><br />
+                        <a>
+                            3、此平台满足高考各批次高考志愿填报。
+                        </a>
+                    </div>
+                    <div class="ibox-title">
+                        <h5>志填报愿情况分析</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 年级志愿填报情况</h5>
+                                </div>
+                                @for (int i = 1; i <= 6; i++)
+                                {
+                                    string yearname = "";
+                                    switch (i)
+                                    {
+                                        case 1:
+                                            yearname = "高一上";
+                                            break;
+                                        case 2:
+                                            yearname = "高一下";
+                                            break;
+                                        case 3:
+                                            yearname = "高二上";
+                                            break;
+                                        case 4:
+                                            yearname = "高二下";
+                                            break;
+                                        case 5:
+                                            yearname = "高三上";
+                                            break;
+                                        case 6:
+                                            yearname = "高三下";
+                                            break;
+                                    }
+                                    <h5 id="ibox-title" class="@string.Format("yearname"+i+"")" style="display:none;">@yearname</h5>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="ibox yuan">
+                                                <div class="addheight3"></div>
+                                                <div class="ibox-content" id="@string.Format("iboxprofessionyear"+i+"")" style="width:600px;height:600px;display:none">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="ibox yuan">
+                                                <div class="addheight3"></div>
+                                                <div class="ibox-content" id="@string.Format("iboxprofmanyear"+i+"")" style="width:600px;height:600px;display:none">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                            <div class="ibox yuan">
+                                                <div class="addheight3"></div>
+                                                <div class="ibox-content" id="@string.Format("iboxprofwomanyear"+i+"")" style="width:600px;height:600px;display:none">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="ibox yuan">
+                                                <div class="addheight3"></div>
+                                                <div class="ibox-content" id="@string.Format("iboxunversityyear"+i+"")" style="width:600px;height:600px;display:none">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="ibox yuan">
+                                                <div class="addheight3"></div>
+                                                <div class="ibox-content" id="@string.Format("iboxunvermanyear"+i+"")" style="width:600px;height:600px;display:none">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="ibox yuan">
+                                                <div class="addheight3"></div>
+                                                <div class="ibox-content" id="@string.Format("iboxunverwomanyear"+i+"")" style="width:600px;height:600px;display:none">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 班级志愿填报情况</h5>
+                                </div>
+                                <div class="ibox-title" id="fourClassvolunt">
+
+                                </div>
+                                <div style="clear:both"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <duv class="bigclass3"></duv>
+            <div class="container1" id="e" style="display:none">
+                <div class="title"><i class="flag"></i>学科选择</div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>学科选择介绍</h5>
+                        <a>
+                            新高考改革增加了学生的学科选择权，学科选择直接关系到学生未来的志愿填报、专业选择和择业就业。学科选择模块使用的是学科兴趣量表测试学生对各学科感兴趣的程度，作为高中学生选科的参考依据。
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 年级学科选择情况</h5>
+                                </div>
+                                <div class="ibox-content" style="margin-top:40px;">
+                                    @for (int i = 1; i <= 3; i++)
+                                    {
+                                        <div id="@string.Format("tipsubselect"+i)" style="width:595px;height:500px;display:none"></div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5 id="ibox-title">@ViewBag.year 班级学科选择情况</h5>
+                                </div>
+                                <div class="ibox-title" id="twoClasssubselect">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/js/plugins/layui/layui.js"></script>
+<script>
+
+    $(function () {
+        //layui.use(['form', 'layui','layer'], function () {
+        //    var form = layui.form()
+        //        , layer = layui.layer;
+        //    layer.load(1, { time: 10000, shade: [0.8, '#393D49'], offset: ['50%', '50%'] });
+        //});
+        layui.use(['laypage', 'layer', 'form'], function () {
+            var laypage = layui.laypage,
+                form = layui.form,
+                layer = layui.layer;
+            layer.load(1, { time: 10000, shade: [0.8, '#393D49'], offset: ['50%', '50%'] });
+            var menu =@Html.Raw(Json.Encode(@ViewBag.menu));//选中菜单加载
+            $.each(menu, function (i) {
+                switch (menu[i]) {
+                    case "f1"://年级生涯能力
+                        $("#a").show();
+                        $(".a").show();
+                        $(".f1").show();
+                        var gradeeval =@Html.Raw(Json.Encode(@ViewBag.gradeeval));
+                        var num = 1;
+                        $.each(gradeeval, function (i) {
+                            //barchartscareer(gradeeval[i].yearid, gradeeval[i].cycname, "tipcareer" + num, num);
+                            num++;
+                        });
+                        break;
+                    case "f2"://班级生涯能力
+                        $("#a").show();
+                        $(".a").show();
+                        $(".f2").show();
+                        var gradeeval =@Html.Raw(Json.Encode(@ViewBag.gradeeval));
+                        var numclass = 1;
+                        $.each(gradeeval, function (i) {
+                            appendClassbtn(gradeeval[i].yearid, gradeeval[i].cycname, numclass, gradeeval[i].gradeid);
+                            numclass++;
+                        });
+                        break;
+                    case "s1"://年级多元智能
+                        $("#b").show();
+                        $(".b").show();
+                        $(".s1").show();
+                        var numduoyuan = 1;
+                        var psyduoyuan = @Html.Raw(Json.Encode(@ViewBag.psyduoyuan));
+                        $.each(psyduoyuan, function (i) {
+                            barchartpsych(psyduoyuan[i].yearid, psyduoyuan[i].cycleid, psyduoyuan[i].cycname, "tipint" + numduoyuan, 26, '多元智能', numduoyuan);
+                            numduoyuan++;
+                        })
+                        break;
+                    case "s2"://班级多元智能
+                        $("#b").show();
+                        $(".b").show();
+                        $(".s2").show();
+                        var numduoyuan = 1;
+                        var psyduoyuan = @Html.Raw(Json.Encode(@ViewBag.psyduoyuan));
+                        $.each(psyduoyuan, function (i) {
+                            appendClassbtnduoyuan(psyduoyuan[i].yearid, psyduoyuan[i].cycname, numduoyuan, psyduoyuan[i].gradeid, psyduoyuan[i].cycleid);
+                            numduoyuan++;
+                        })
+                        break;
+                    case "s3"://年级学习多维
+                        $("#b").show();
+                        $(".b").show();
+                        $(".s3").show();
+                        var numduowei = 1;
+                        var psyduowei = @Html.Raw(Json.Encode(@ViewBag.psyduowei));
+                        $.each(psyduowei, function (i) {
+                            barchartpsych(psyduowei[i].yearid, psyduowei[i].cycleid, psyduowei[i].cycname, "tipmult" + numduowei, 27, '学习多维', numduowei);
+                            numduowei++;
+                        })
+                        break;
+                    case "s4"://班级学习多维
+                        $("#b").show();
+                        $(".b").show();
+                        $(".s4").show();
+                        var numduowei = 1;
+                        var psyduowei = @Html.Raw(Json.Encode(@ViewBag.psyduowei));
+                        $.each(psyduowei, function (i) {
+                            appendClassbtnduowei(psyduowei[i].yearid, psyduowei[i].cycname, numduowei, psyduowei[i].gradeid, psyduowei[i].cycleid);
+                            numduowei++;
+                        })
+                        break;
+                    case "s5"://年级学习风格
+                        $("#b").show();
+                        $(".b").show();
+                        $(".s5").show();
+                        var numfengge = 1;
+                        var psyfengge = @Html.Raw(Json.Encode(@ViewBag.psyfengge));
+                        $.each(psyfengge, function (i) {
+                            barchartpsych(psyfengge[i].yearid, psyfengge[i].cycleid, psyfengge[i].cycname, "tipstyle" + numfengge, 30, '学习风格', psyfengge);
+                            numfengge++;
+                        })
+                        break;
+                    case "s6"://班级学习风格
+                        $("#b").show();
+                        $(".b").show();
+                        $(".s6").show();
+                        var numfengge = 1;
+                        var psyfengge = @Html.Raw(Json.Encode(@ViewBag.psyfengge));
+                        $.each(psyfengge, function (i) {
+                            appendClassbtnfengge(psyfengge[i].yearid, psyfengge[i].cycname, numfengge, psyfengge[i].gradeid, psyfengge[i].cycleid);
+                            numfengge++;
+                        })
+                        break;
+                    case "fo1"://年级志愿填报
+                        $("#d").show();
+                        $(".d").show();
+                        $(".fo1").show();
+                        var numzhiyuan = 1;
+                        var psyzhiyuan = @Html.Raw(Json.Encode(@ViewBag.zhiyuan));
+                        $.each(psyzhiyuan, function (i) {
+                            layuiloadvolun(psyzhiyuan[i].GradeName, psyzhiyuan[i].cycname, psyzhiyuan[i].cycleid, "iboxprofessionyear" + numzhiyuan, "iboxunversityyear" + numzhiyuan, "iboxprofmanyear" + numzhiyuan, "iboxprofwomanyear" + numzhiyuan, "iboxunvermanyear" + numzhiyuan, "iboxunverwomanyear" + numzhiyuan, "yearname" + numzhiyuan, numzhiyuan);
+                            numzhiyuan++;
+                        })
+                        break;
+                    case "fo2"://班级志愿填报
+                        $("#d").show();
+                        $(".d").show();
+                        $(".fo2").show();
+                        var numzhiyuan = 1;
+                        var psyzhiyuan = @Html.Raw(Json.Encode(@ViewBag.zhiyuan));
+                        $.each(psyzhiyuan, function (i) {
+                            appendClassbtnzhiyuan(psyzhiyuan[i].yearid, psyzhiyuan[i].cycname, numzhiyuan, psyzhiyuan[i].gradeid, psyzhiyuan[i].cycleid);
+                            numzhiyuan++;
+                        })
+                        break;
+                    case "t1"://年级志愿填报
+                        $("#c").show();
+                        $(".c").show();
+                        $(".t1").show();
+                        var numzhiyuan = 1;
+                        var psyzhiyuan = @Html.Raw(Json.Encode(@ViewBag.zhiyuan));
+                        $.each(psyzhiyuan, function (i) {
+                            barchartsprofess(psyzhiyuan[i].GradeName, psyzhiyuan[i].cycname, psyzhiyuan[i].cycleid, "tipprofess" + numzhiyuan, "tipmanprofess" + numzhiyuan, "tipwomanprofess" + numzhiyuan, numzhiyuan);
+                            numzhiyuan++;
+                        })
+                        break;
+                    case "t2"://班级志愿填报
+                        $("#c").show();
+                        $(".c").show();
+                        $(".t2").show();
+                        var numzhiyuan = 1;
+                        var psyzhiyuan = @Html.Raw(Json.Encode(@ViewBag.zhiyuan));
+                        $.each(psyzhiyuan, function (i) {
+                            appendClassbtnzhiye(psyzhiyuan[i].yearid, psyzhiyuan[i].cycname, numzhiyuan, psyzhiyuan[i].gradeid, psyzhiyuan[i].cycleid);
+                            numzhiyuan++;
+                        })
+                        break;
+                      case "fi1"://年级学科选择
+                        $("#e").show();
+                        $(".e").show();
+                        $(".fi1").show();
+                        var gradesubject =@Html.Raw(Json.Encode(@ViewBag.subject));
+                        var num = 1;
+                        $.each(gradesubject, function (i) {
+                            barchartssubselect(gradesubject[i].yearid, gradesubject[i].name, "tipsubselect" + num, num);
+                            num++;
+                        });
+                        break;
+                    case "fi2"://班级学科选择
+                        $("#e").show();
+                        $(".e").show();
+                        $(".fi2").show();
+                        var gradesubject =@Html.Raw(Json.Encode(@ViewBag.subjects));
+                        var numclass = 1;
+                        $.each(gradesubject, function (i) {
+                            appendClassbtnsubject(gradesubject[i].yearid, gradesubject[i].name, numclass, gradesubject[i].gradeid, gradesubject[i].gradename);
+                            numclass++;
+                        });
+                        break;
+                }
+            })
+            $("#exportExcel").show();
+        })
+    })
+</script>
+<script>
+    //获取班级列表  生涯能力
+    var classcareer = 1;
+    var appendClassbtn = function (yearid, cycname, num, gradeid) {
+        $("#threeClass").append("<h5 id=\"ibox-title" + num + "\" style=\"display:none;margin-top:-10px;\">" + cycname + "</h5>");;
+        $.getJSON("/YDTopicInfoGrade/GetClassInfo?gradeId=" + gradeid + "&v=" + Math.random() + "", function (res) {
+            if (res.success) {
+                var c = 1;
+                $.each(res.rows, function (i) {
+                    //班级生涯能力
+                    $("#ibox-title" + num + "").append("</div><div class=\"ibox-content\" style=\"margin-top:15px;\"><div id=\"tipclasscareer" + num + c + "\" style=\"width:595px;height:330px;display:none\"></div></div>");
+                    barchartsclasscareer(yearid, cycname, res.rows[i].ClassName, "tipclasscareer" + num + c, "ibox-title" + num, classcareer);
+                    classcareer++;
+                    c++;
+                });
+            }
+        });
+    };
+    //班级生学科选择
+    var appendClassbtnsubject = function (yearid, yearname, num, gradeid, gradename) {
+        $("#twoClasssubselect").append("<h5 id=\"ibox-titlesubject" + num + "\" style=\"display:none;margin-top:-10px;\">" + yearname +" "+ gradename + "</h5>");;
+        $.getJSON("/YDTopicInfoGrade/GetClassInfo?gradeId=" + gradeid + "&v=" + Math.random() + "", function (res) {
+            if (res.success) {
+                var c = 1;
+                var cc = 1;
+                $.each(res.rows, function (i) {
+                    //班级生学科选择
+                    $("#ibox-titlesubject" + num + "").append("</div><div class=\"ibox-content\" style=\"margin-top:15px;\"><div id=\"tipclasssubject" + num + c + "\" style=\"width:595px;height:330px;display:none\"></div></div>");
+                    barchartsclasssubject(yearid, yearname, res.rows[i].ClassName, "tipclasssubject" + num + c, "ibox-titlesubject" + num, cc);
+                    cc++;
+                    c++;
+                });
+            }
+        });
+    };
+    //班级 多元智能
+    var appendClassbtnduoyuan = function (yearid, cycname, num, gradeid, cycleid) {
+        $("#threeClassint").append("<h5 id=\"ibox-titleint" + num + "\" style=\"display:none;margin-top:-10px;\">" + cycname + "学期" + "</h5>");
+        $.getJSON("/YDTopicInfoGrade/GetClassInfo?gradeId=" + gradeid + "&v=" + Math.random() + "", function (res) {
+
+            if (res.success) {
+                var c = 1;
+                $.each(res.rows, function (i) {
+                    //二 班级多元智能分析
+                    $("#ibox-titleint" + num + "").append("<div class=\"ibox-content\" style=\"margin-top:15px;\"><div class=\"addheight\"></div><div id=\"tipintclass" + num + c + "\" style=\"width:595px;height:330px;display:none\"></div></div>");
+                    barchartpsychclass(yearid, cycleid, cycname, res.rows[i].ClassName, res.rows[i].ClassId, "tipintclass" + num + c, "ibox-titleint" + num, 26, '多元智能', num);
+                    c++;
+                });
+            }
+        });
+    };
+    //班级 学习多维
+    var appendClassbtnduowei = function (yearid, cycname, num, gradeid, cycleid) {
+        $("#threeClassmult").append("<h5 id=\"ibox-titlemult" + num + "\" style=\"display:none;margin-top:-10px;\">" + cycname + "学期" + "</h5>");
+        $.getJSON("/YDTopicInfoGrade/GetClassInfo?gradeId=" + gradeid + "&v=" + Math.random() + "", function (res) {
+            if (res.success) {
+                var c = 1;
+                $.each(res.rows, function (i) {
+                    //二 班级年级学习多维分析
+                    $("#ibox-titlemult" + num + "").append("<div class=\"ibox-content\" style=\"margin-top:15px;\"><div class=\"addheight\"></div><div id=\"tipmultclass" + num + c + "\" style=\"width:595px;height:330px;display:none\"></div></div>");
+                    barchartpsychclass(yearid, cycleid, cycname, res.rows[i].ClassName, res.rows[i].ClassId, "tipmultclass" + num + c, "ibox-titlemult" + num, 27, '学习多维', num);
+                    c++;
+                });
+            }
+        });
+    };
+    //班级 学习风格
+    var appendClassbtnfengge = function (yearid, cycname, num, gradeid, cycleid) {
+        $("#threeClassstyle").append("<h5 id=\"ibox-titlestyle" + num + "\" style=\"display:none;margin-top:-10px;\">" + cycname + "学期" + "</h5>");
+        $.getJSON("/YDTopicInfoGrade/GetClassInfo?gradeId=" + gradeid + "&v=" + Math.random() + "", function (res) {
+            if (res.success) {
+                var c = 1;
+                $.each(res.rows, function (i) {
+                    //二 班级学习风格分析
+                    $("#ibox-titlestyle" + num + "").append("<div class=\"ibox-content\" style=\"margin-top:15px;\"><div class=\"addheight\"></div><div id=\"tipstyleclass" + num + c + "\" style=\"width:595px;height:330px;display:none\"></div></div>");
+                    barchartpsychclass(yearid, cycleid, cycname, res.rows[i].ClassName, res.rows[i].ClassId, "tipstyleclass" + num + c, "ibox-titlestyle" + num, 30, '学习风格', num);
+                    c++;
+
+                });
+
+            }
+        });
+    };
+    //班级 志愿填报
+    var appendClassbtnzhiyuan = function (yearid, cycname, num, gradeid, cycleid) {
+
+        $.getJSON("/YDTopicInfoGrade/GetClassInfo?gradeId=" + gradeid + "&v=" + Math.random() + "", function (res) {
+            if (res.success) {
+                var c = 1;
+                $("#fourClassvolunt").append("<h5 id=\"ibox-titlevolunt" + num + "\" style=\"display:none;margin-top:-10px;\">" + cycname + "学期" + "</h5>");
+                $.each(res.rows, function (i) {
+
+                    //班级志愿填报情况
+                    $("#ibox-titlevolunt" + num + "").append("<div class=\"row\" style=\"margin-top:20px;\"><div class=\"col-sm-6\"><div class=\"ibox yuan\"><div class=\"ibox-content\"" +
+                        "id = \"iboxprofessionclass" + num + c + "\")\" style = \"width:600px;height:600px;display:none\"></div></div></div> <div class=\"col-sm-6\">" +
+                        "<div class=\"ibox yuan\" ><div class=\"ibox-content\"" +
+                        "id = \"iboxprofmanclass" + num + c + "\")\" style = \"width:600px;height:600px;display:none\"></div></div></div ></div>" +
+                        "<div class=\"row\"><div class=\"col-sm-6\"><div class=\"ibox yuan\"></div></div> <div class=\"col-sm-6\">" +
+                        "<div class=\"ibox yuan\" ><div class=\"ibox-content\" id=\"iboxprofwomanclass" + num + c + "\")\" style=\"width: 600px;height:600px;display:none\"></div><div class=\"ibox-content\" id=\"iboxunversityclass" + num + c + "\")\" style=\"width: 600px;height:600px;display:none\"></div></div></div ></div>" +
+                        "<div class=\"row\"><div class=\"col-sm-6\"><div class=\"ibox yuan\"><div class=\"ibox-content\"" +
+                        "id = \"iboxunvermanclass" + num + c + "\")\" style = \"width:600px;height:600px;display:none\"></div></div></div> <div class=\"col-sm-6\">" +
+                        "<div class=\"ibox yuan\" ><div class=\"ibox-content\" id=\"iboxunverwomanclass" + num + c + "\")\" style=\"width: 600px;height:600px;display:none\"></div></div></div ></div><div style=\"clear:both\"></div>" +
+                        "")
+                    layuiloadvolunclass(cycname, res.rows[i].ClassId, res.rows[i].ClassName, cycleid, "iboxprofessionclass" + num + c, "iboxunversityclass" + num + c, "iboxprofmanclass" + num + c, "iboxprofwomanclass" + num + c, "iboxunvermanclass" + num + c, "iboxunverwomanclass" + num + c, "ibox-titlevolunt" + num, num)
+                    c++;
+                });
+            }
+        });
+    };
+    //班级 职业专业
+    var appendClassbtnzhiye = function (yearid, cycname, num, gradeid, cycleid) {
+
+        $.getJSON("/YDTopicInfoGrade/GetClassInfo?gradeId=" + gradeid + "&v=" + Math.random() + "", function (res) {
+            if (res.success) {
+                var c = 1;
+                $("#twoClassprofess").append("<h5 id=\"ibox-titleprofess" + num + "\" style=\"display:none;margin-top:-10px;\">" + cycname + "学期" + "</h5>");
+                $.each(res.rows, function (i) {
+                    //三 班级学生职业标签分布情况
+                    $("#ibox-titleprofess" + num + "").append("<div class=\"ibox-content\" style=\"margin-top:40px;\">" +
+                        "<div id=\"tipprofessclass" + num + c + "\" style=\"width:595px;height:500px;display:none\"></div>" +
+                        "<div class=\"ibox-content\" id=\"tipmanprofessclass" + num + c + "\" style=\"width:600px;height:500px;display:none\"></div>" +
+                        "<div class=\"ibox-content\" id=\"tipwomanprofessclass" + num + c + "\" style=\"width:600px;height:500px;display:none\"></div></div><div style=\"clear:both\"></div>");
+                    barchartsprofessclass(cycname, res.rows[i].ClassId, res.rows[i].ClassName, cycleid, "tipprofessclass" + num + c, "tipmanprofessclass" + num + c, "tipwomanprofessclass" + num + c, "ibox-titleprofess" + num, num);
+                    c++;
+                });
+            }
+        });
+    };
+    
+</script>
+
+<script>
+    var legendsum = function (list, name, value) {
+        var count = 0;
+        $.each(list, function (i) {
+            count += parseInt(list[i].Number);
+        });
+        return name + ",占比:" + toPercent(value, count);
+    }
+    var legendsumbq = function (list, name, value) {
+        var count = 0;
+        $.each(list, function (i) {
+            count += parseInt(list[i].TradeNameCount);
+        });
+        return name + ",占比:" + toPercent(value, count);
+    }
+    function toPercent(point, percents) {
+        var str = parseFloat(parseFloat(parseFloat(point) / parseFloat(percents)) * 100).toFixed(2);
+        str += "%";
+        return str;
+    }
+    function guid() {
+        function S4() {
+            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+        }
+        return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
+    }
+    var array = [];
+    //生涯能力 年级
+    var barchartscareer = function (studyYearsId, cycleName, echarid, num) {
+        $.getJSON("/YDTopicInfoGrade/GetTopicInfoGradeBarData?v=" + Math.random() + "", { CycleName: cycleName, StudyYearsId: studyYearsId }, function (res) {
+
+            if (res.success && res.rows.length > 0) {
+                var itemList = [];
+                var scoreList = [];
+                $.each(res.rows, function (i) {
+                    itemList.push(res.rows[i].Name);
+                    scoreList.push(res.rows[i].Score.toFixed(2));
+                });
+                var titletxt = cycleName + "全年级学生生涯能力分析情况";
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+             
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    calculable: true,
+                    legend: {
+                        data: ['得分'],
+                        left: 'left'
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: itemList,
+                            axisLabel: {
+                                interval: 0,//横轴信息全部显示
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '得分',
+                            type: 'bar',
+                            data: scoreList,
+                            barWidth: 20,//柱图宽度
+                            itemStyle: {
+                                normal: {
+
+                                    color: function (d) { return "#" + Math.floor(Math.random() * (256 * 256 * 256 - 1)).toString(16); }       // 随机显示
+                                }
+                            },
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'top'
+                                }
+                            }
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + echarid + "").show();
+
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "年级生涯能力", cycleName: cycleName, num: num })
+            }
+            else {
+                $("#" + echarid + "").hide();
+            }
+        });
+    }
+    //生涯能力 班级
+    var barchartsclasscareer = function (yearid, cycname, classname, echarid, parent, num) {
+        $.getJSON("/YDTopicInfoGrade/GetTopicInfoGradeBarData?v=" + Math.random() + "", { ClassName: classname, CycleName: cycname, StudyYearsId: yearid }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                $("#" + echarid + "").show();
+                $("#" + parent + "").show();
+                var itemList = [];
+                var scoreList = [];
+                $.each(res.rows, function (i) {
+                    itemList.push(res.rows[i].Name);
+                    scoreList.push(res.rows[i].Score);
+                });
+                var titletxt = classname + cycname + "学生生涯能力分析情况";
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    calculable: true,
+                    legend: {
+                        data: ['得分'],
+                        left: 'left'
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: itemList,
+                            axisLabel: {
+                                interval: 0,//横轴信息全部显示
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '得分',
+                            type: 'bar',
+                            data: scoreList,
+                            barWidth: 20,//柱图宽度
+                            itemStyle: {
+                                normal: {
+                                    color: function (d) { return "#" + Math.floor(Math.random() * (256 * 256 * 256 - 1)).toString(16); }       // 随机显示
+                                }
+                            },
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'top'
+                                }
+                            },
+                            //markPoint: {
+                            //    data: [
+                            //        { type: 'max', name: '最大值' },
+                            //        { type: 'min', name: '最小值' }
+                            //    ]
+                            //},
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级生涯能力", cycleName: cycname, num: num })
+            }
+            else {
+                $("#" + echarid + "").hide();
+            }
+        });
+
+
+
+    }
+    //年级  心理测量
+    var barchartpsych = function (yearid, cycleId, cycname, echarid, type, typename, num) {
+        $.getJSON("/YDGeneralTest/GetGradeMultivariateBarData?v=" + Math.random() + "", { CycleTimeId: cycleId, Type: type }, function (res) {
+
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var legendname = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].value);
+                    legendname.push(res.rows[i].Name);
+                });
+                var titletxt = cycname + "年级学生" + typename + "分析情况";
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+               
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    legend: {
+                        data: ['得分'],
+                        left: 'left'
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            //boundaryGap: false,
+                            data: legendname,
+                            axisLabel: {
+                                interval: 0,//横轴信息全部显示
+                                rotate: -60//-30度角倾斜显示
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '得分',
+                            type: 'bar',
+                            data: data,
+                            barWidth: 15,//柱图宽度
+                            itemStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: '#66E7FE'
+                                    }, {
+                                        offset: 1,
+                                        color: '#821CF7'
+                                    }]),
+                                    barBorderRadius: 3
+                                }
+                            },
+                            markPoint: {
+                                data: [
+                                    { type: 'max', name: '最大值' },
+                                    { type: 'min', name: '最小值' }
+                                ]
+                            },
+                            //markLine: {
+                            //    data: [
+                            //        { type: 'average', name: '平均值' }
+                            //    ]
+                            //}
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                console.log(myChart.getDataURL());
+                $("#" + echarid + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "年级" + typename + "", cycleName: cycname, num: num })
+            }
+        });
+    }
+    //班级  心理测量
+    var barchartpsychclass = function (yearid, cycleId, cycname, classname, ClassId, echarid, parent, type, typename, num) {
+        $.getJSON("/YDGeneralTest/GetMultivariateBarData?v=" + Math.random() + "", { ClassName: classname, ClassId: ClassId, CycleTimeId: cycleId, Type: type }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var legendname = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].value);
+                    legendname.push(res.rows[i].Name);
+                });
+                var titletxt = classname + " " + cycname + "班级学生" + typename + "分析情况";
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    legend: {
+                        data: ['得分'],
+                        left: 'left'
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            //boundaryGap: false,
+                            data: legendname,
+                            axisLabel: {
+                                interval: 0,//横轴信息全部显示
+                                rotate: -60//-30度角倾斜显示
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '得分',
+                            type: 'bar',
+                            data: data,
+                            barWidth: 15,//柱图宽度
+                            itemStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: '#66E7FE'
+                                    }, {
+                                        offset: 1,
+                                        color: '#821CF7'
+                                    }]),
+                                    barBorderRadius: 3
+                                }
+                            },
+                            markPoint: {
+                                data: [
+                                    { type: 'max', name: '最大值' },
+                                    { type: 'min', name: '最小值' }
+                                ]
+                            },
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + echarid + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级" + typename + "", cycleName: cycname, num: num })
+            }
+        });
+    }
+    //年级志愿填报情况
+    var layuiloadvolun = function (GradeName, cycleName, cycleId, iboxprofession, iboxuniversity, iboxprofman, iboxprofwoman, iboxunman, iboxunwoman, yearnamenum, num) {
+        //专业情况饼状图
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerMajorGradeBarData?GradeName=" + GradeName + "&CycleTimeId=" + cycleId + "&Top=15&v=" + Math.random() + "", function (res) {
+            console.log(res)
+            if (res.success && res.rows.length > 0) {
+
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].MajorName);
+                    var legname = legendsum(res.rows, res.rows[i].MajorName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = cycleName + "意向选择专业TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxprofession + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxprofession + "").show();
+                $("#" + yearnamenum + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "意向选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerMajorGradeBarData?GradeName=" + GradeName + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=1&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+
+                    data.push(res.rows[i].MajorName);
+                    var legname = legendsum(res.rows, res.rows[i].MajorName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = cycleName + "男生意向选择专业TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxprofman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxprofman + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "男生意向选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerMajorGradeBarData?GradeName=" + GradeName + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=2&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].MajorName);
+                    var legname = legendsum(res.rows, res.rows[i].MajorName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = cycleName + "女生意向选择专业TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxprofwoman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxprofwoman + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "女生意向选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        //院校情况饼状图
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerUniversityClassBarData?GradeName=" + GradeName + "&CycleTimeId=" + cycleId + "&Top=15&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].UniversityName);
+                    var legname = legendsum(res.rows, res.rows[i].UniversityName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = cycleName + "意向选择院校TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxuniversity + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxuniversity + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "意向选择院校", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerUniversityClassBarData?GradeName=" + GradeName + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=1&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].UniversityName);
+                    var legname = legendsum(res.rows, res.rows[i].UniversityName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = cycleName + "男生意向选择院校TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxunman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxunman + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "男生意向选择院校", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerUniversityClassBarData?GradeName=" + GradeName + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=2&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].UniversityName);
+                    var legname = legendsum(res.rows, res.rows[i].UniversityName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = cycleName + "女生意向选择院校TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxunwoman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxunwoman + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "女生意向选择院校", cycleName: cycleName, num: num })
+            }
+        });
+    }
+    //班级 志愿填报
+    var layuiloadvolunclass = function (cycleName, classId, className, cycleId, iboxprofession, iboxuniversity, iboxprofman, iboxprofwoman, iboxunman, iboxunwoman, parent, num) {
+        //专业情况饼状图
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerMajorClassBarData?ClassName=" + className + "&CycleTimeId=" + cycleId + "&Top=15&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+
+                    data.push(res.rows[i].MajorName);
+                    var legname = legendsum(res.rows, res.rows[i].MajorName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "意向选择专业TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxprofession + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxprofession + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级意向选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerMajorClassBarData?ClassName=" + className + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=1&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+
+                    data.push(res.rows[i].MajorName);
+                    var legname = legendsum(res.rows, res.rows[i].MajorName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "男生意向选择专业TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxprofman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxprofman + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级男生意向选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerMajorClassBarData?ClassName=" + className + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=2&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].MajorName);
+                    var legname = legendsum(res.rows, res.rows[i].MajorName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "女生意向选择专业TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxprofwoman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxprofwoman + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级女生意向选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        //院校情况饼状图
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerUniversityClassBarData?ClassName=" + className + "&CycleTimeId=" + cycleId + "&Top=15&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].UniversityName);
+                    var legname = legendsum(res.rows, res.rows[i].UniversityName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "意向选择院校TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxuniversity + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxuniversity + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级意向选择院校", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerUniversityClassBarData?ClassName=" + className + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=1&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].UniversityName);
+                    var legname = legendsum(res.rows, res.rows[i].UniversityName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "男生意向选择院校TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxunman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxunman + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级男生意向选择院校", cycleName: cycleName, num: num })
+            }
+        });
+        $.getJSON("/YDVolunteerCollegeClass/GetVolunteerUniversityClassBarData?ClassName=" + className + "&CycleTimeId=" + cycleId + "&Top=15" + "&StudentSex=2&v=" + Math.random() + "", function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].UniversityName);
+                    var legname = legendsum(res.rows, res.rows[i].UniversityName, res.rows[i].Number);
+                    series.push({ value: res.rows[i].Number, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "女生意向选择院校TOP15";
+                var myChart = echarts.init(document.getElementById("" + iboxunwoman + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '35%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + iboxunwoman + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级女生意向选择院校", cycleName: cycleName, num: num })
+            }
+        });
+    }
+    //三 年级学生职业标签分布情况
+    var barchartsprofess = function (gradeName, cycleName, cycleId, echarid, echarmanid, eahcrwomanid, num) {
+        //百分比占比
+        $.getJSON("/YDHollandResultInfoClass/GetHollandResultGradeBarData?v=" + Math.random() + "", { CycleTimeId: cycleId, GradeName: gradeName }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].TradeNameCount);
+                    var legname = legendsumbq(res.rows, res.rows[i].TradeName, res.rows[i].TradeNameCount);
+                    series.push({ value: res.rows[i].TradeNameCount, name: legname });
+                });
+                var titletxt = cycleName + "标签选择专业大类分布占比";
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '40%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + echarid + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "标签选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        //班级(男生)标签选择专业大类分布占比
+        $.getJSON("/YDHollandResultInfoClass/GetHollandResultGradeBarData?v=" + Math.random() + "", { CycleTimeId: cycleId, GradeName: gradeName, StudentSex: 1 }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].TradeNameCount);
+                    var legname = legendsumbq(res.rows, res.rows[i].TradeName, res.rows[i].TradeNameCount);
+                    series.push({ value: res.rows[i].TradeNameCount, name: legname });
+                });
+                var titletxt = cycleName + "男生标签选择专业大类分布占比";
+                var myChart = echarts.init(document.getElementById("" + echarmanid + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '40%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + echarmanid + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "男生标签选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        //班级(女生)标签选择专业大类分布占比
+        $.getJSON("/YDHollandResultInfoClass/GetHollandResultGradeBarData?v=" + Math.random() + "", { CycleTimeId: cycleId, GradeName: gradeName, StudentSex: 2 }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].TradeNameCount);
+                    var legname = legendsumbq(res.rows, res.rows[i].TradeName, res.rows[i].TradeNameCount);
+                    series.push({ value: res.rows[i].TradeNameCount, name: legname });
+                });
+                var titletxt = cycleName + "女生标签选择专业大类分布占比";
+                var myChart = echarts.init(document.getElementById("" + eahcrwomanid + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '40%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + eahcrwomanid + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "女生标签选择专业", cycleName: cycleName, num: num })
+            }
+        });
+    };
+    //班级 学生职业标签分布
+    var barchartsprofessclass = function (cycleName, classId, className, cycleId, echarid, echarmanid, eahcrwomanid, parent, num) {
+        //百分比占比
+        //班级标签选择专业大类分布占比
+        $.getJSON("/YDHollandResultInfoClass/GetHollandResultGradeBarData?v=" + Math.random() + "", { CycleTimeId: cycleId, ClassName: className }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].TradeNameCount);
+                    var legname = legendsumbq(res.rows, res.rows[i].TradeName, res.rows[i].TradeNameCount);
+                    series.push({ value: res.rows[i].TradeNameCount, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "班级标签选择专业大类分布占比";
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + echarid + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级标签选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        //班级(男生)标签选择专业大类分布占比
+        $.getJSON("/YDHollandResultInfoClass/GetHollandResultGradeBarData?v=" + Math.random() + "", { CycleTimeId: cycleId, ClassName: className, StudentSex: 1 }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].TradeNameCount);
+                    var legname = legendsumbq(res.rows, res.rows[i].TradeName, res.rows[i].TradeNameCount);
+                    series.push({ value: res.rows[i].TradeNameCount, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "班级男生标签选择专业大类分布占比";
+                var myChart = echarts.init(document.getElementById("" + echarmanid + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '40%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + echarmanid + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级男生标签选择专业", cycleName: cycleName, num: num })
+            }
+        });
+        //班级(女生)标签选择专业大类分布占比
+        $.getJSON("/YDHollandResultInfoClass/GetHollandResultGradeBarData?v=" + Math.random() + "", { CycleTimeId: cycleId, ClassName: className, StudentSex: 2 }, function (res) {
+            if (res.success && res.rows.length > 0) {
+                var data = [];
+                var series = [];
+                var trhtml = "";
+                var tdhtml = "";
+                $.each(res.rows, function (i) {
+                    data.push(res.rows[i].TradeNameCount);
+                    var legname = legendsumbq(res.rows, res.rows[i].TradeName, res.rows[i].TradeNameCount);
+                    series.push({ value: res.rows[i].TradeNameCount, name: legname });
+                });
+                var titletxt = className + " " + cycleName + "班级女生标签选择专业大类分布占比";
+                var myChart = echarts.init(document.getElementById("" + eahcrwomanid + ""));
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {a}<br/>{c}人次<br/>{b}"
+                    },
+                    legend: {
+                        bottom: 0,
+                        left: 'center',
+                        data: series.name
+                    },
+                    calculable: true,
+                    color: ['#4DA1FF', '#FFCD30', '#795EF1', '#83D587', '#FC5D6F'],
+                    series: [
+                        {
+                            name: '选择人次',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '40%'],
+                            data: series
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                $("#" + eahcrwomanid + "").show();
+                $("#" + parent + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级女生标签选择专业", cycleName: cycleName, num: num })
+            }
+        });
+    }
+    //年级学科选择
+
+    var barchartssubselect = function (studyYearsId, yearname, echarid, num) {
+        var param = {
+            StudyYearsId: studyYearsId,
+            v: Math.random()
+        };
+        $.getJSON("/YDSubjectSelect/RadarSubjectChart", param, function (res) {
+            if (res.EvalueLineName.length != 0) {
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+
+                var testName = res.EvalueLineName;
+                var nowData = res.BillDatas;
+                // 指定图表的配置项和数据
+                var titletxt = yearname + "全年级学科选择情况";
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        //text: '选课组合分布(总人数：' + res.Count + '人,已选科人数：' + res.Sum + '人)',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        },
+                        formatter: function (a) {
+                            var relVal = "人数：";
+                            relVal += a[0].value + "  <br/>占比：";
+                            relVal += ((a[0].value / res.Sum) * 100).toFixed(2) + "%";
+                            return relVal;
+                        }
+                    },
+                    legend: {
+                        selectedMode: false,//取消图例上的点击事件
+                        data: ['实际分数'],
+                        left: '80%',
+                    },
+                    grid: {
+                        left: '0%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: testName,
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    series: [
+                        {
+                            name: "人数",
+                            type: 'bar',
+                            barWidth: 40,
+                            itemStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: '#66E7FE'
+                                    }, {
+                                        offset: 1,
+                                        color: '#821CF7'
+                                    }]),
+                                    barBorderRadius: 3
+                                }
+                            },
+                            color: ['#00ACF1'],//红色
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'top',
+                                }
+                            },
+                            data: nowData//原数据
+                        }
+                    ]
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                window.addEventListener("resize", function () {
+                    myChart.resize();
+                });
+                $("#" + echarid + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "年级学科选择", cycleName: yearname, num: num })
+            }
+            else {
+                $("#" + echarid + "").hide();
+            }
+        });
+    }
+
+    //班级  学科选择
+    var barchartsclasssubject = function (yearid, yearname, classname, echarid, parent, num) {
+        var param = {
+            StudyYearsId: yearid,
+            //GradeName: cycleName,
+            ClassName: classname,
+            //StudentSex: $("#studentsex").val(),
+            //Chosen: $("#chosen").val(),
+            v: Math.random()
+        };
+        $.getJSON("/YDSubjectSelect/RadarSubjectChart", param, function (res) {
+            console.log(res);
+            
+            if (res.EvalueLineName.length != 0) {
+                $("#" + echarid + "").show();
+                $("#" + parent + "").show();
+                var myChart = echarts.init(document.getElementById("" + echarid + ""));
+                var testName = res.EvalueLineName;
+                var nowData = res.BillDatas;
+                // 指定图表的配置项和数据
+                var titletxt = yearname + "("+classname +")"+ "学科选择情况";
+                option = {
+                    animation: false,
+                    backgroundColor: '#fff',
+                    title: {
+                        text: titletxt,
+                        //text: '选课组合分布(总人数：' + res.Count + '人,已选科人数：' + res.Sum + '人)',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                        },
+                        formatter: function (a) {
+                            var relVal = "人数：";
+                            relVal += a[0].value + "  <br/>占比：";
+                            relVal += ((a[0].value / res.Sum) * 100).toFixed(2) + "%";
+                            return relVal;
+                        }
+                    },
+                    legend: {
+                        selectedMode: false,//取消图例上的点击事件
+                        data: ['实际分数'],
+                        left: '80%',
+                    },
+                    grid: {
+                        left: '0%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: testName,
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    series: [
+                        {
+                            name: "人数",
+                            type: 'bar',
+                            barWidth: 40,
+                            itemStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: '#66E7FE'
+                                    }, {
+                                        offset: 1,
+                                        color: '#821CF7'
+                                    }]),
+                                    barBorderRadius: 3
+                                }
+                            },
+                            color: ['#00ACF1'],//红色
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'top',
+                                }
+                            },
+                            data: nowData//原数据
+                        }
+                    ]
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option, true);
+                window.addEventListener("resize", function () {
+                    myChart.resize();
+                });
+                $("#" + echarid + "").show();
+                array.push({ baseimg: myChart.getDataURL(), guid: guid(), name: "班级学科选择", cycleName: yearname + "(" + classname + ")", num: num })
+            }
+            else {
+                $("#" + echarid + "").hide();
+            }
+        });
+    }
+</script>
+<script>
+    $("#exportExcel").click(function () {
+        console.log(array)
+        //$("#exportExcel").remove();
+         var menu =@Html.Raw(Json.Encode(@ViewBag.menu));
+        $.ajax({
+            type: "post",
+            dataType:"json",
+            data: { bases: array, menu: menu, title:'@ViewBag.year' },
+            url: "/whitepaper/MakeWord?v=" + Math.random() + "",
+            success: function (res) {
+                console.log(res)
+                if (res != null && res.success == true) {
+                    window.location.href = '/whitepaper/DownFile?wordUrl=' + res.rows + '&Title=@ViewBag.year&cyclename=@ViewBag.cyclename';
+                } else {
+                    alert("生成失败，请刷新界面重试。");
+                }
+            }, error: function (res) {
+                console.log(res)
+            }
+        })
+    });
+</script>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-number-box": "/components/uni-number-box/uni-number-box",
+    "shopro-empty": "/components/shopro-empty/shopro-empty"
+  }
+}

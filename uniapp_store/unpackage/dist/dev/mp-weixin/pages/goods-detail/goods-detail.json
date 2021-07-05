@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-number-box": "/components/uni-number-box/uni-number-box",
+    "uni-popup": "/components/uni-popup/components/uni-popup/uni-popup"
+  }
+}

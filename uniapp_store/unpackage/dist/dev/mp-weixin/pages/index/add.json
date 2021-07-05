@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "定量新增",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "shopcart": "/components/shopcart",
+    "cartcontrol": "/components/cartcontrol"
+  }
+}

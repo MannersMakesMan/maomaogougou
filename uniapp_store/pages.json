@@ -1,0 +1,183 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"tui-(.*)": "@/components/thorui/tui-$1/tui-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "定量列表"
+			}
+		}, {
+			"path": "pages/My/My",
+			"style": {
+				"navigationBarTitleText": "定量列表",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/Cart/Cart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/Category/Category",
+			"style": {
+				"navigationBarTitleText": "分类",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/Login/Login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}
+	    ,{
+            "path" : "pages/goods-detail/goods-detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Client/Client",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "客户管理",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Client/add",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "添加客户",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Client/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "客户详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Order/Order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "确认订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Order/List",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Order/Detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "定量详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/add",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "定量新增",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Login/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/My/edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"tabBar": {
+		"color": "#333",
+		"selectedColor": "#333",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/tab_home.png",
+				"selectedIconPath": "static/tabbar/tab_home_sel.png",
+				"text": "定量"
+			},
+			{
+				"pagePath": "pages/Category/Category",
+				"iconPath": "static/tabbar/tab_type.png",
+				"selectedIconPath": "static/tabbar/tab_type_sel.png",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/Cart/Cart",
+				"iconPath": "static/tabbar/tab_cart.png",
+				"selectedIconPath": "static/tabbar/tab_cart_sel.png",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/My/My",
+				"iconPath": "static/tabbar/tab_my.png",
+				"selectedIconPath": "static/tabbar/tab_my_sel.png",
+				"text": "个人中心"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "暂定",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#FFFFFF"
+	}
+}

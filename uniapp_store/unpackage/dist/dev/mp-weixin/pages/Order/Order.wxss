@@ -1,0 +1,184 @@
+.foot_box {
+  height: 100rpx;
+  padding: 0 25rpx;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  background-color: #fff;
+}
+.foot_box .num {
+  font-size: 26rpx;
+  color: #999;
+}
+.foot_box .all-money {
+  margin: 0 60rpx 0 20rpx;
+}
+.foot_box .all-money .price {
+  color: #e1212b;
+}
+.foot_box .sub-btn {
+  width: 210rpx;
+  height: 70rpx;
+  background: -webkit-linear-gradient(left, #e9b461, #eecc89);
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0px 7rpx 6rpx 0px rgba(229, 138, 0, 0.22);
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+.logistic,
+.price-box,
+.remark-box,
+.score,
+.coupon {
+  border-top: 1rpx solid rgba(223, 223, 223, 0.5);
+}
+.border-top {
+  border-top: 1rpx solid rgba(223, 223, 223, 0.5);
+}
+.item-list {
+  height: 100rpx;
+  background: #fff;
+  padding: 0 25rpx;
+}
+.item-list .item-title {
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.item-list .detail {
+  font-size: 28rpx;
+  color: #333;
+}
+.item-list .price {
+  font-size: 26rpx;
+  color: #e1212b;
+  margin-right: 20rpx;
+}
+.item-list .sel-coupon {
+  font-size: 26rpx;
+  color: #c4c4c4;
+  margin-right: 20rpx;
+}
+.item-list .cuIcon-right {
+  color: #c4c4c4;
+}
+.goods-box {
+  position: relative;
+}
+.goods-box .goods-img {
+  height: 180rpx;
+  width: 180rpx;
+  background-color: #ccc;
+  margin-right: 25rpx;
+}
+.goods-box .order-goods__tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.goods-box .order-goods__tag .tag-img {
+  width: 60rpx;
+  height: 30rpx;
+}
+.goods-box .goods-title {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  width: 450rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.goods-box .size-tip {
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.goods-box .sub-tip {
+  width: 480rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #a8700d;
+  margin: 10rpx 0;
+}
+.goods-box .price {
+  color: #e1212b;
+}
+.goods-box .order-right {
+  height: 180rpx;
+}
+.goods-box .order-tip {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  width: 450rpx;
+  margin-bottom: 20rpx;
+}
+.goods-box .order-tip .order-num {
+  margin-right: 10rpx;
+}
+.goods-box .order-goods {
+  width: 480rpx;
+}
+.goods-box .order-goods .status-btn {
+  background: none;
+  height: 32rpx;
+  border: 1rpx solid #cfa972;
+  border-radius: 15rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #a8700d;
+  padding: 0 10rpx;
+  margin-left: 20rpx;
+  background: rgba(233, 183, 102, 0.16);
+}
+.goods-box .order-goods .order-price {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: #333333;
+}
+.goods-list {
+  background: #fff;
+  position: relative;
+  margin-top: 20rpx;
+}
+.goods-list .goods-title {
+  width: 460rpx !important;
+}
+.goods-list .goods-card {
+  padding: 30rpx;
+}
+.goods-list .goods-price {
+  font-size: 30rpx;
+  font-weight: 500;
+  width: 480rpx;
+}
+.goods-list .goods-price .goods-num {
+  font-size: 28rpx;
+  color: #c4c4c4;
+}
+.goods-list {
+  background: #fff;
+  position: relative;
+  margin-top: 20rpx;
+}
+.goods-list .goods-title {
+  width: 460rpx !important;
+}
+.goods-list .goods-card {
+  padding: 30rpx;
+}
+.goods-list .goods-price {
+  font-size: 30rpx;
+  font-weight: 500;
+  width: 480rpx;
+}
+.goods-list .goods-price .goods-num {
+  font-size: 28rpx;
+  color: #c4c4c4;
+}
+

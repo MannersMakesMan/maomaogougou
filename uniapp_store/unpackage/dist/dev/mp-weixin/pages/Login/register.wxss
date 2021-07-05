@@ -1,0 +1,59 @@
+
+.nx-box.data-v-dabf923c {
+	padding: 0 100rpx;
+	position: relative;
+}
+.nx-logo.data-v-dabf923c {
+	width: 100%;
+	width: 100%;
+	height: 310rpx;
+}
+.nx-title.data-v-dabf923c {
+	position: absolute;
+	top: 0;
+	line-height: 360rpx;
+	font-size: 68rpx;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	margin-left: -100rpx;
+}
+.nx-form.data-v-dabf923c {
+	margin-top: 300rpx;
+}
+.nx-input.data-v-dabf923c {
+	background: #e2f5fc;
+	margin-top: 30rpx;
+	border-radius: 100rpx;
+	padding: 20rpx 40rpx;
+	font-size: 36rpx;
+	box-sizing: content-box;
+}
+.input-placeholder.data-v-dabf923c,
+.nx-input.data-v-dabf923c {
+	color: #94afce;
+}
+.nx-label.data-v-dabf923c {
+	padding: 60rpx 0;
+	text-align: center;
+	font-size: 30rpx;
+	color: #a7b6d0;
+}
+.nx-btn.data-v-dabf923c {
+	background: #ff65a3;
+	color: #fff;
+	border: 0;
+	border-radius: 100rpx;
+	font-size: 36rpx;
+	margin-top: 60rpx;
+}
+.nx-btn.data-v-dabf923c:after {
+	border: 0;
+}
+
+/*按钮点击效果*/
+.nx-btn.button-hover.data-v-dabf923c {
+	-webkit-transform: translate(1rpx, 1rpx);
+	        transform: translate(1rpx, 1rpx);
+}
+

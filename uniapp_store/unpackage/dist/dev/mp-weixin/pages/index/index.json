@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "定量列表",
+  "usingComponents": {
+    "tui-tag": "/components/thorui/tui-tag/tui-tag",
+    "tui-loadmore": "/components/thorui/tui-loadmore/tui-loadmore",
+    "tui-nomore": "/components/thorui/tui-nomore/tui-nomore"
+  }
+}

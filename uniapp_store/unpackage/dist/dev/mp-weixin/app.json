@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/My/My",
+    "pages/Cart/Cart",
+    "pages/Category/Category",
+    "pages/Login/Login",
+    "pages/goods-detail/goods-detail",
+    "pages/Client/Client",
+    "pages/Client/add",
+    "pages/Client/detail",
+    "pages/Order/Order",
+    "pages/Order/List",
+    "pages/Order/Detail",
+    "pages/index/detail",
+    "pages/index/add",
+    "pages/Login/register",
+    "pages/My/edit"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "暂定",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#333",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/tab_home.png",
+        "selectedIconPath": "static/tabbar/tab_home_sel.png",
+        "text": "定量"
+      },
+      {
+        "pagePath": "pages/Category/Category",
+        "iconPath": "static/tabbar/tab_type.png",
+        "selectedIconPath": "static/tabbar/tab_type_sel.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/Cart/Cart",
+        "iconPath": "static/tabbar/tab_cart.png",
+        "selectedIconPath": "static/tabbar/tab_cart_sel.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/My/My",
+        "iconPath": "static/tabbar/tab_my.png",
+        "selectedIconPath": "static/tabbar/tab_my_sel.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "usingComponents": {
+    "shopro-login-modal": "/components/gk-login-modal/shopro-login-modal"
+  },
+  "sitemapLocation": "sitemap.json"
+}

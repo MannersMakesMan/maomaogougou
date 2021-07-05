@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-combox": "/components/uni-combox/uni-combox",
+    "combox-search": "/components/cuihai-combox/cuihai-combox"
+  }
+}

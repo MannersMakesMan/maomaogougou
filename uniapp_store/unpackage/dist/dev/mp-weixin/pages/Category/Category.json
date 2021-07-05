@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "分类",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "t-linkage": "/components/thorui/t-linkage/t-linkage"
+  }
+}

@@ -1,0 +1,11 @@
+.container {
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: #fff;
+}
+.item-box .item-name {
+  font-size: 22rpx;
+  color: #333;
+  font-weight: bold;
+  padding: 20rpx;
+}
+

@@ -1,0 +1,290 @@
+.btn-box {
+  height: 100rpx;
+}
+.btn-box .cu-btn {
+  width: 340rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0;
+}
+.btn-box .cart-btn {
+  background: -webkit-linear-gradient(left, #676869, #525252);
+  background: linear-gradient(90deg, #676869, #525252);
+  box-shadow: 0px 2rpx 5rpx 0px rgba(102, 103, 104, 0.46);
+}
+.btn-box .buy-btn {
+  background: -webkit-linear-gradient(left, #e9b461, #eecc89);
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0px 7rpx 6rpx 0px rgba(229, 138, 0, 0.22);
+}
+.btn-box .seckill-btn {
+  width: 710rpx;
+  height: 70rpx;
+  background: -webkit-linear-gradient(left, #e9b461, #eecc89);
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0px 7rpx 6rpx 0px rgba(229, 138, 0, 0.22);
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 35rpx;
+  padding: 0;
+}
+.buy-num-box .num-title {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin-bottom: 20rpx;
+}
+.top {
+  margin-bottom: 50rpx;
+}
+.top .shop-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 6rpx;
+  margin-right: 30rpx;
+  background: #ccc;
+}
+.top .goods-box {
+  height: 160rpx;
+  width: 490rpx;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+}
+.top .goods-box .goods-title {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 42rpx;
+  text-align: left;
+}
+.top .goods-box .goods-bottom {
+  width: 100%;
+}
+.top .goods-box .price-box {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #e1212b;
+}
+.top .goods-box .price-box .unit {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #e1212b;
+}
+.top .goods-box .stock {
+  font-size: 26rpx;
+  color: #999;
+}
+.x-ac {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.detail-foot_box {
+  height: 100rpx;
+  background: #ffffff;
+  border-top: 1rpx solid #eeeeee;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+.detail-foot_box .left,
+.detail-foot_box .detail-right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.detail-foot_box .tools-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  height: 100%;
+}
+.detail-foot_box .tools-item .tool-img {
+  width: 46rpx;
+  height: 46rpx;
+}
+.detail-foot_box .tools-item .tool-title {
+  font-size: 22rpx;
+  line-height: 22rpx;
+  padding-top: 8rpx;
+}
+.detail-foot_box .detail-btn-box {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.detail-foot_box .detail-btn-box .tool-btn {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  width: 210rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  padding: 0;
+  margin-right: 20rpx;
+}
+.detail-foot_box .detail-btn-box .tool-btn .price {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+}
+.detail-foot_box .detail-btn-box .tool-btn .price-title {
+  font-size: 20rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  padding-top: 8rpx;
+}
+.detail-foot_box .detail-btn-box .add-btn {
+  box-shadow: 0px 2rpx 5rpx 0px rgba(102, 103, 104, 0.46);
+  background: -webkit-linear-gradient(left, #676869, #525252);
+  background: linear-gradient(90deg, #676869, #525252);
+}
+.detail-foot_box .detail-btn-box .pay-btn {
+  box-shadow: 0px 7rpx 6rpx 0px rgba(229, 138, 0, 0.22);
+  background: -webkit-linear-gradient(left, #e9b461, #eecc89);
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+}
+.detail-foot_box .detail-btn-box .seckill-btn {
+  width: 432rpx;
+  height: 70rpx;
+  background: -webkit-linear-gradient(357deg, #d01325, #ed3c30);
+  background: linear-gradient(93deg, #d01325, #ed3c30);
+  box-shadow: 0px 7rpx 6rpx 0px rgba(237, 60, 48, 0.22);
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 35rpx;
+  padding: 0;
+  margin-right: 20rpx;
+}
+.detail-foot_box .detail-btn-box .seckilled-btn {
+  width: 432rpx;
+  height: 70rpx;
+  background: #dddddd;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+  border-radius: 35rpx;
+  padding: 0;
+  margin-right: 20rpx;
+}
+.detail-foot_box .detail-btn-box .groupon-btn {
+  width: 210rpx;
+  height: 70rpx;
+  background: -webkit-linear-gradient(left, #fe832a, #ff6600);
+  background: linear-gradient(90deg, #fe832a, #ff6600);
+  box-shadow: 0px 7rpx 6rpx 0px rgba(255, 104, 4, 0.22);
+  border-radius: 35rpx;
+}
+.x-f {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.tab-detail {
+  min-height: 300rpx;
+  background: #fff;
+}
+.goods-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+  background-color: #fff;
+  padding-bottom: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.sub-title {
+  padding: 0 20rpx;
+  color: #a8700d;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+  background-color: #fff;
+  padding-bottom: 10rpx;
+}
+.normal-price-box {
+  padding: 20rpx;
+  background: url('https://shopro.7wpp.com/imgs/price_normal_bg.png') no-repeat;
+  background-size: 100% 100%;
+}
+.normal-price-box .unit,
+.normal-price-box .notice {
+  font-size: 24rpx;
+  color: #fff;
+}
+.normal-price-box .price {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 10rpx;
+}
+.normal-price-box .price-bottom-box {
+  font-size: 24rpx;
+  color: #fff;
+  font-weight: 500;
+  padding-top: 10rpx;
+}
+.normal-price-box .price-bottom-box .original-price {
+  text-decoration: line-through;
+}
+.normal-price-box .price-bottom-box .line {
+  margin: 0 20rpx;
+  display: inline-block;
+  width: 3rpx;
+  height: 24rpx;
+  background-color: #fff;
+}
+.goodes_detail_swiper-box {
+  width: 750rpx;
+  height: 750rpx;
+  position: relative;
+}
+.goodes_detail_swiper-box .carousel {
+  width: 750rpx;
+  height: 100%;
+}
+.goodes_detail_swiper-box .carousel-item {
+  width: 750rpx;
+  height: 100%;
+}
+.goodes_detail_swiper-box .swiper-image {
+  width: 750rpx;
+  height: 100%;
+  background: #ccc;
+}
+.goodes_detail_swiper-box .swiper-dots {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  line-height: 44rpx;
+  border-radius: 22rpx;
+  padding: 0 15rpx;
+  background: rgba(51, 51, 51, 0.3);
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
