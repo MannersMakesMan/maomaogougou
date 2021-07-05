@@ -1,0 +1,6 @@
+.idea
+all.log
+/automatic_ui/ui_script_temporary/
+/automatic_api/api_script_temporary/
+/frontend/
+/*/migrations

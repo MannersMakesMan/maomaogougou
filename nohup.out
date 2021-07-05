@@ -1,0 +1,168 @@
+/root/project/venvs/zy_venv/lib/python3.6/site-packages/pandas/compat/__init__.py:120: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+2021-02-23 10:30:41,778,31940,apscheduler.scheduler,INFO,base.py:166,Scheduler started
+2021-02-23 10:30:41,779,31940,apscheduler.scheduler,DEBUG,base.py:940,Looking for jobs to run
+2021-02-23 10:30:41,781,31940,apscheduler.scheduler,DEBUG,base.py:1016,No jobs; waiting until a job is added
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 23, 2021 - 10:30:41
+Django version 2.2.2, using settings 'basic_configuration.settings'
+Starting development server at http://0.0.0.0:8888/
+Quit the server with CONTROL-C.
+/root/project/venvs/zy_venv/lib/python3.6/site-packages/pandas/compat/__init__.py:120: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+2021-02-23 10:59:40,737,7009,apscheduler.scheduler,INFO,base.py:166,Scheduler started
+2021-02-23 10:59:40,738,7009,apscheduler.scheduler,DEBUG,base.py:940,Looking for jobs to run
+2021-02-23 10:59:40,738,7009,apscheduler.scheduler,DEBUG,base.py:1016,No jobs; waiting until a job is added
+/root/project/venvs/zy_venv/lib/python3.6/site-packages/pandas/compat/__init__.py:120: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+2021-02-23 11:00:15,947,9207,apscheduler.scheduler,INFO,base.py:166,Scheduler started
+2021-02-23 11:00:15,948,9207,apscheduler.scheduler,DEBUG,base.py:940,Looking for jobs to run
+2021-02-23 11:00:15,950,9207,apscheduler.scheduler,DEBUG,base.py:1016,No jobs; waiting until a job is added
+2021-02-23 11:18:55,204,7009,django.request,ERROR,log.py:228,Internal Server Error: /SystemManage/Perform
+Traceback (most recent call last):
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/project/auto_test/system_settings/views/perform.py", line 53, in post
+    return success_response(data=PerformMachineSerializerQuery(data).data, msg='新增执行机信息成功！')
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/serializers.py", line 548, in data
+    ret = super().data
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/root/project/auto_test/system_settings/serializers.py", line 434, in get_status
+    return obj.status_display()
+AttributeError: 'PerformMachine' object has no attribute 'status_display'
+2021-02-23 11:18:55,207,7009,django.server,ERROR,basehttp.py:154,"POST /SystemManage/Perform HTTP/1.1" 500 19467
+2021-02-23 11:19:14,134,7009,django.request,ERROR,log.py:228,Internal Server Error: /SystemManage/Perform
+Traceback (most recent call last):
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/project/auto_test/system_settings/views/perform.py", line 53, in post
+    return success_response(data=PerformMachineSerializerQuery(data).data, msg='新增执行机信息成功！')
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/serializers.py", line 548, in data
+    ret = super().data
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/root/project/venvs/zy_venv/lib/python3.6/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/root/project/auto_test/system_settings/serializers.py", line 434, in get_status
+    return obj.status_display()
+AttributeError: 'PerformMachine' object has no attribute 'status_display'
+2021-02-23 11:19:14,135,7009,django.server,ERROR,basehttp.py:154,"POST /SystemManage/Perform HTTP/1.1" 500 19467
+ok test_1 (automatic_api.api_script_temporary.test_20210223131106165516.SceneSetting)
+
+Time Elapsed: 0:00:00.265026
+ok test_1 (automatic_api.api_script_temporary.test_20210223131207461564.SceneSetting)
+
+Time Elapsed: 0:00:00.207284
+ok test_1 (automatic_api.api_script_temporary.test_20210223132120416604.SceneSetting)
+ok test_2 (automatic_api.api_script_temporary.test_20210223132120416604.SceneSetting)
+
+Time Elapsed: 0:00:02.134781
+ok test_1 (automatic_api.api_script_temporary.test_20210223132221711278.SceneSetting)
+
+Time Elapsed: 0:00:00.228415
+E  test_1 (automatic_api.api_script_temporary.test_20210223144934936032.SceneSetting)
+
+Time Elapsed: 0:00:00.000651
+E  test_1 (automatic_api.api_script_temporary.test_20210223145156823081.SceneSetting)
+
+Time Elapsed: 0:00:00.000599
+E  test_1 (automatic_api.api_script_temporary.test_20210223145903953742.SceneSetting)
+
+Time Elapsed: 0:00:00.000693
+E  test_1 (automatic_api.api_script_temporary.test_20210223150520029265.SceneSetting)
+
+Time Elapsed: 0:00:00.000689
+ok test_1 (automatic_api.api_script_temporary.test_20210223150754107580.SceneSetting)
+
+Time Elapsed: 0:00:00.077021
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 23, 2021 - 10:59:40
+Django version 2.2.2, using settings 'basic_configuration.settings'
+Starting development server at http://0.0.0.0:8888/
+Quit the server with CONTROL-C.
+None
+********TEST START********
+300
+********TEST END********
+None
+********TEST START********
+300
+********TEST END********
+None
+********TEST START********
+316
+********TEST END********
+None
+********TEST START********
+300
+********TEST END********
+Dataexplain object (1)
+None
+********TEST START********
+310
+********TEST END********
+None
+********TEST START********
+310
+********TEST END********
+None
+********TEST START********
+310
+********TEST END********
+None
+********TEST START********
+310
+********TEST END********
+['1']
+None
+********TEST START********
+300
+********TEST END********
+/root/project/venvs/zy_venv/lib/python3.6/site-packages/pandas/compat/__init__.py:120: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+2021-02-23 15:13:19,466,32706,apscheduler.scheduler,INFO,base.py:166,Scheduler started
+2021-02-23 15:13:19,467,32706,apscheduler.scheduler,DEBUG,base.py:940,Looking for jobs to run
+2021-02-23 15:13:19,469,32706,apscheduler.scheduler,DEBUG,base.py:1016,No jobs; waiting until a job is added

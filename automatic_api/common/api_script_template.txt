@@ -1,0 +1,25 @@
+import sys
+import os
+import unittest
+import json
+import urllib.parse
+
+import requests
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
+
+go_on_flag = True
+
+class SceneSetting(unittest.TestCase):
+    def __init__(self, methodName='runTest', params=""):
+        super().__init__(methodName)
+        self.params = params
+
+    def setUp(self):
+        pass
+
+{function_position}
+    def tearDown(self):
+        pass

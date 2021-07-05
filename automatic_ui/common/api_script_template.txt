@@ -1,0 +1,33 @@
+import sys
+import os
+import unittest
+import json
+
+import selenium.webdriver.remote.webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.support import expected_conditions as EC
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
+
+go_on_flag = True
+
+class SceneSetting(unittest.TestCase):
+    def __init__(self, methodName='runTest', params=""):
+        super().__init__(methodName)
+        self.params = params
+
+    def setUp(self):
+        self.driver = selenium.webdriver.remote.webdriver.WebDriver(command_executor="{remoteip}",desired_capabilities=DesiredCapabilities.CHROME)
+        self.driver.implicitly_wait({implicit_waut_time})  # 设置隐式等待
+        self.driver.maximize_window()  # 全屏窗口
+
+{function_position}
+    def tearDown(self):
+        self.driver.quit()
